@@ -1,0 +1,12 @@
+const test = require('node:test'), assert = require('node:assert');
+const C = require('../public/js/calc.js');
+test('½ + ½ = 1 arroba', () => assert.equal(C.total(0, 2), 1));
+test('1 + ½ = 1.5', () => assert.equal(C.total(1, 1), 1.5));
+test('2 + 1 media = 2.5', () => assert.equal(C.total(2, 1), 2.5));
+test('3 + 2 medias = 4', () => assert.equal(C.total(3, 2), 4));
+test('Juan: 15 + 1 media a $12 = $186.00', () => assert.equal(C.fmtC(C.money(15, 1, C.cents('12.00'))), '$186.00'));
+test('media = mitad exacta', () => assert.equal(C.money(0, 1, 1200), 600));
+test('precio con centavos impares', () => assert.equal(C.money(0, 1, 1201), 601));
+test('ausente = 0', () => assert.equal(C.money(0, 0, 1200), 0));
+test('día de la semana', () => assert.equal(C.dia('2026-11-16'), 'Lunes'));
+test('símbolo ½', () => { assert.equal(C.half(1), '½'); assert.equal(C.half(3), '3×½'); });

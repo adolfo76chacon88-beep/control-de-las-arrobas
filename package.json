@@ -1,0 +1,7 @@
+{
+  "name": "control-de-arrobas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "dev": "vercel dev", "test": "node --test tests/calc.test.js" },
+  "dependencies": { "@supabase/supabase-js": "^2.45.4" }
+}
